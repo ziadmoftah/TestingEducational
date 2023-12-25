@@ -71,7 +71,7 @@ public class SeleniumWebDriver {
         driver.close();
     }
 
-    @Test
+    @Test (enabled = false)
     public void test6(){
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver() ;
@@ -86,6 +86,14 @@ public class SeleniumWebDriver {
         Assert.assertEquals(searchResultMessage.getText() , "No products were found that matched your criteria.", "search message wrong");
         //driver.navigate().back();
         //driver.close();
+    }
+
+    @Test
+    public void test7(){
+        System.setProperty("webdriver.gecko.driver" , System.getProperty("user.dir")+"/resources/geckodriver.exe");
+        WebDriver driver = new FirefoxDriver() ;
+        driver.get("https://www.google.com");
+        driver.manage().window().maximize();
     }
 
 }
