@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -88,10 +89,18 @@ public class SeleniumWebDriver {
         //driver.close();
     }
 
-    @Test
+    @Test ( enabled = false )
     public void test7(){
         System.setProperty("webdriver.gecko.driver" , System.getProperty("user.dir")+"/resources/geckodriver.exe");
         WebDriver driver = new FirefoxDriver() ;
+        driver.get("https://www.google.com");
+        driver.manage().window().maximize();
+    }
+
+    @Test
+    public void test8(){
+        System.setProperty("webdriver.edge.driver" , System.getProperty("user.dir")+"/resources/msedgedriver.exe");
+        WebDriver driver = new EdgeDriver() ;
         driver.get("https://www.google.com");
         driver.manage().window().maximize();
     }
