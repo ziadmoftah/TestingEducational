@@ -104,5 +104,4 @@ public class SeleniumWebDriver {
         driver.get("https://www.google.com");
         driver.manage().window().maximize();
     }
-
 }
