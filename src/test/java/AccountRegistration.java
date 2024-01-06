@@ -37,7 +37,7 @@ public class AccountRegistration {
         WebElement firstNameInput = driver.findElement(By.xpath("//input[@id = 'FirstName']")) ;
         WebElement secondNameInput = driver.findElement(By.xpath("//input[@id = 'LastName']")) ;
             // Birthdate picking
-        WebElement datePickerGroup = driver.findElement(By.xpath("/html/body/div[6]/div[3]/div/div/div/div[2]/form/div[1]/div[2]/div[4]/div")) ;
+        WebElement datePickerGroup = driver.findElement(By.xpath("//div[@class = 'date-picker-wrapper']")) ;
         WebElement dateOfBirthDayList = datePickerGroup.findElement(By.name("DateOfBirthDay"));
         WebElement dateOfBirthMonthList = datePickerGroup.findElement(By.name("DateOfBirthMonth")) ;
         WebElement dateOfBirthYearList = datePickerGroup.findElement(By.name("DateOfBirthYear")) ;
@@ -65,7 +65,7 @@ public class AccountRegistration {
         if ( newsLetterCheckBox.isSelected()){
             newsLetterCheckBox.click();
         }
-        emailInput.sendKeys("hsffh@gmail.com");
+        emailInput.sendKeys("hsfjkhfh@gmail.com");
         passwordInput.sendKeys("123456789");
         confirmPasswordInput.sendKeys("123456789");
 
