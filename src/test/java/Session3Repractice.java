@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -138,6 +139,25 @@ public class Session3Repractice {
         softAssert.assertEquals(searchedForItem , successfulMessage.getText());
         driver.close();
         softAssert.assertAll();
+
+    }
+
+    @Test
+    public void SelectFromDropdown(){
+        driver = new FirefoxDriver();
+        String websiteURL = "https://demo.nopcommerce.com/register?returnUrl=%2F" ;
+        softAssert = new SoftAssert() ;
+        driver.get(websiteURL);
+
+
+        Select birthDay = new Select(driver.findElement(By.xpath("//select[@name ='DateOfBirthDay']")));
+        Select birthMonth = new Select(driver.findElement(By.xpath("//select[@name ='DateOfBirthMonth']")));
+        Select birthYear = new Select(driver.findElement(By.xpath("//select[@name ='DateOfBirthYear']")));
+
+        birthDay.selectByVisibleText("15");
+        birthMonth.selectByValue("1");
+        birthYear.selectByIndex(87);
+
 
     }
 }
